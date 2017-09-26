@@ -25,7 +25,20 @@
     target: '#mainNav',
     offset: 54
   });
+//intro to life insurance
+$(document).ready(function(){
+var text = $(".insu");
+var index = -1;
 
+function next(){
+  ++index;
+  text.eq(index % text.length)
+  .fadeIn(2000)
+  .delay(2000)
+  .fadeOut(2000, next);
+}
+next();
+})();
   // Collapse the navbar when page is scrolled
   $(window).scroll(function() {
     if ($("#mainNav").offset().top > 100) {
